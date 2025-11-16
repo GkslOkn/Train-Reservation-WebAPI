@@ -24,6 +24,31 @@ if (trainReservationApi.Environment.IsDevelopment())
 // Creating the API Endpoints
 trainReservationApi.MapPost("/api/reservations", (ReservationRequest reservationRequest) =>
 {
+    // Input validation is added to provide input consistency.
+    if (reservationRequest == null)
+        return Results.BadRequest("Request body cannot be empty.");
+
+    if(reservationRequest.Train==null)
+        return Results.BadRequest("Train information must be provided.");
+
+    if (reservationRequest.ReservationCount < 0)
+        return Results.BadRequest("ReservationCount must be greater than 0.");
+
+    if (reservationRequest.Train.Wagons == null || !reservationRequest.Train.Wagons.Any())
+        return Results.BadRequest("The train must have at least one wagon.");
+
+    foreach(var Wagon in reservationRequest.Train.Wagons)
+    {
+        if (Wagon.Capacity < 0 || Wagon.FullSeats < 0)
+        {
+            return Results.BadRequest($"Error with {Wagon.Name}: Capacity and FullSeats values must be greater than 0.");
+        }
+        if (Wagon.FullSeats > Wagon.Capacity)
+        {
+            return Results.BadRequest($"Error with {Wagon.Name}: The value of FullSeats cannot be greater than a wagon's capacity.");
+        }
+    }
+
     // Core logic is in the CalculateReservations function. Return HTTP 200 if request is successful.
     ReservationResponse reservationResponse = ReservationService.CalculateReservations(reservationRequest);
     return Results.Ok(reservationResponse);
