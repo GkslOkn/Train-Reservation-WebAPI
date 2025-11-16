@@ -6,7 +6,7 @@ Bu API, bir trendeki vagonların doluluk oranlarına (proje dokümanında %70 ol
 
 Çalışan API URL'i aşağıda bulunmaktadır.
 
-**LINK:** [https://train-reservation-webapi.onrender.com/api/reservations]
+**LINK:** https://train-reservation-webapi.onrender.com/api/reservations
 
 Proje, Render'ın Free seviyesinde deploy edildiği için bazı durumlarda ilk istek uzun sürebilir. Bu Render Free Tier'ın bir özelliğidir.
 
@@ -17,10 +17,10 @@ Proje, Render'ın Free seviyesinde deploy edildiği için bazı durumlarda ilk i
 - Postman (Deployment Sonrası Test İçin Kullanıldı)
 
 ## Projeyi Yerel Bilgisayarda Nasıl Çalıştırabilirsiniz
-1. Bu repository'i, 'git clone [https://github.com/GkslOkn/Train-Reservation-WebAPI.git]' komutu ile klonlayın.
+1. Bu repository'i, 'git clone https://github.com/GkslOkn/Train-Reservation-WebAPI.git' komutu ile klonlayın.
 2. Proje klasörüne gidin ve 'dotnet restore' komutu ile gerekli paketleri yükleyin.
 3. 'dotnet run' komutunu kullanarak projeyi çalıştırın.
-4. Test arayüzü (Swagger) için '[http://localhost:5032/swagger/index.html]' linkini tarayıcınızda açınız.
+4. Test arayüzü (Swagger) için 'http://localhost:5032/swagger/index.html' linkini tarayıcınızda açınız.
 5. Açılan ekranda POST tuşuna ve ardından "Try it out" butonlarına tıklayınız. Aşağıda örnek bir API isteği bulunmaktadır.
 
 ## Örnek API İsteği (JSON Formatında)
