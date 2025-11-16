@@ -18,8 +18,8 @@ if (trainReservationApi.Environment.IsDevelopment())
 {
     trainReservationApi.UseSwagger();
     trainReservationApi.UseSwaggerUI();
+    trainReservationApi.UseHttpsRedirection();
 }
-trainReservationApi.UseHttpsRedirection();
 
 // Creating the API Endpoints
 trainReservationApi.MapPost("/api/reservations", (ReservationRequest reservationRequest) =>
