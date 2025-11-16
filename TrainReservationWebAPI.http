@@ -1,0 +1,6 @@
+@TrainReservationWebAPI_HostAddress = http://localhost:5032
+
+GET {{TrainReservationWebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
