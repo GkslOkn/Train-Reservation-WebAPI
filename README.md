@@ -8,6 +8,8 @@ Bu API, bir trendeki vagonların doluluk oranlarına (proje dokümanında %70 ol
 
 **LINK:** [https://train-reservation-webapi.onrender.com/api/reservations]
 
+Proje, Render'ın Free seviyesinde deploy edildiği için bazı durumlarda ilk istek uzun sürebilir. Bu Render Free Tier'ın bir özelliğidir.
+
 ## Projede Kullanılan Teknolojiler
 - NET 9.0
 - C# 13.0
